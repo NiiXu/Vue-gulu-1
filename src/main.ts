@@ -3,15 +3,15 @@ import App from "./App.vue";
 import "./index.css";
 
 import { createWebHashHistory, createRouter } from "vue-router";
-import Chen from './components/Chen.vue'
-import Chen2 from './components/Chen2.vue'
+import Home from './views/Home.vue'
+import Doc from './views/Doc.vue'
 
 const history = createWebHashHistory();
 const router = createRouter({
     history : history,
     routes : [
-        {path:'/',component: Chen},
-        {path:'/xxx',component: Chen2}
+        {path:'/',component: Home},
+        {path:'/xxx',component: Doc}
     ]
 });
 
