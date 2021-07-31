@@ -6,13 +6,20 @@
             <li>菜单2</li>
         </ul>
     </div>
- 
+<script lang="ts">
+export default {
+  
+}
+</script>
+
 </template>
 <style lang="scss" scoped>
     .topnav {
         background: pink;
         display: flex;
         padding: 16px;
+        position: relative;
+        z-index: 10;
     > .logo {
         max-width: 6em;
         margin-right: auto;
