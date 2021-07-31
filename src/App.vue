@@ -1,15 +1,17 @@
 <template>
-  <div>hi</div>
-  <chen/>
+  <div>
+        导航栏 | 
+        <router-link to="/">Chen</router-link> | 
+        <router-link to="/xxx">Chen2</router-link>
+        </div>
+        <hr/>
+        <router-view />
 </template>
 
 <script>
-import Chen from './components/Chen.vue'
+
 
 export default {
   name: 'App',
-  components: {
-    Chen
-  }
 }
 </script>
