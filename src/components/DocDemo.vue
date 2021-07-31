@@ -1,5 +1,5 @@
 <template>
     <div>
-    Tabs 示例
+        默认页面
     </div>
 </template>
