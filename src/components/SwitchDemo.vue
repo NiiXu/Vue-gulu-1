@@ -1,5 +1,12 @@
 <template>
     <div>
-    Tabs 示例
+    <Switch />
     </div>
 </template>
+
+<script lang ="ts">
+import Switch from '../lib/Switch.vue'
+export default {
+    components:{Switch}
+}
+</script>
