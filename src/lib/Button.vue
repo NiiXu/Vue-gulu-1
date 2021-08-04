@@ -1,47 +1,30 @@
-Skip to content
-Why GitHub? 
-Team
-Enterprise
-Explore 
-Marketplace
-Pricing 
-
-Search
-
-Sign in
-Sign up
-FrankFang
-/
-qjVPO7f89org
-2 4
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-qjVPO7f89org/src/lib/Button.vue
-@FrankFang
-FrankFang 支持 theme 属性
-Latest commit 90176c7 on 9 Aug 2020
- History
- 1 contributor
-68 lines (67 sloc)  1.17 KB
-  
-<template>
-  <button class="gulu-button" :class="{[`gulu-theme-${theme}`]: theme}">
+  <template>
+  <button class="gulu-button" :class="classes">
     <slot />
   </button>
 </template>
 <script lang="ts">
+import { computed } from "vue";
 export default {
   props: {
     theme: {
       type: String,
       default: "button",
     },
+    size: {
+      type: String,
+      default: "normal",
+    },
+  },
+  setup(props) {
+    const { theme, size } = props;
+    const classes = computed(() => {
+      return {
+        [`gulu-theme-${theme}`]: theme,
+        [`gulu-size-${size}`]: size,
+      };
+    });
+    return { classes };
   },
 };
 </script>
@@ -79,20 +62,34 @@ $radius: 4px;
   &::-moz-focus-inner {
     border: 0;
   }
-  &.gulu-theme-link{
+  &.gulu-theme-link {
     border-color: transparent;
     box-shadow: none;
     color: $blue;
-    &:hover,&:focus{
+    &:hover,
+    &:focus {
       color: lighten($blue, 10%);
     }
   }
-  &.gulu-theme-text{
+  &.gulu-theme-text {
     border-color: transparent;
     box-shadow: none;
     color: inherit;
-    &:hover,&:focus{
-      background: darken(white, 5%);;
+    &:hover,
+    &:focus {
+      background: darken(white, 5%);
+    }
+  }
+  &.gulu-theme-button{
+    &.gulu-size-big{
+      font-size: 24px;
+      height: 48px;
+      padding: 0 16px
+    }
+    &.gulu-size-small{
+      font-size: 12px;
+      height: 20px;
+      padding: 0 4px;
     }
   }
 }
